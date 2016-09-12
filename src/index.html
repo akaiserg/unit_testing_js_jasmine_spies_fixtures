@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spies</title>
+
+</head>
+<body>
+    <div>
+        <p id="name_id"></p>
+        <p id="last_name_id"></p>
+        <p id="error1_id"></p>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td id="count_id">Total</td>
+                    <td id="sum_id">--</td>
+                </tr>
+            </tfoot>
+            <tbody id="tbody_id">
+
+            </tbody>
+        </table>
+    </div>
+
+
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="AjaxModule.js"></script>
+<script src="PromiseModule.js"></script>
+<script src="ModuleA.js"></script>
+<script src="ModuleB.js"></script>
+<script src="app.js"></script>
+<script>
+    var moduleA= new ModuleA(new AjaxModule());
+    moduleA.setId("name_id","last_name_id","error1_id");
+    var moduleB= new ModuleB(new PromiseModule());
+    var app= new App(moduleA,moduleB);
+    app.setId("sum_id","tbody_id");
+    app.start();
+
+</script>
+</body>
+</html>
