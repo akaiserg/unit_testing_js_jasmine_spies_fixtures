@@ -89,7 +89,7 @@ describe('App', function() {
 
     });
 
-    it("should render a table with three  fields, the sum  should be 116931 and the first id should e 1",function(){
+    it("should render a table with three  fields, the sum  should be 116931 and the first id should be 1",function(){
 
         setUpHTMLFixture();
         app.setId("sum_id","tbody_id");
